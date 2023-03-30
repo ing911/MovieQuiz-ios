@@ -166,9 +166,6 @@ final class MovieQuizViewController: UIViewController {
         let currentQuestion = questions[currentQuestionIndex]
         let givenAnswer = true
         showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
-        print("Hello")
-        view.backgroundColor = .green
-        
     }
 }
 

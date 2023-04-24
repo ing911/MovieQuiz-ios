@@ -1,10 +1,3 @@
-//
-//  QuestionFactory.swift
-//  MovieQuiz
-//
-//  Created by Пользователь on 06.04.2023.
-//
-
 import Foundation
 
 class QuestionFactory: QuestionFactoryProtocol {
@@ -51,7 +44,7 @@ class QuestionFactory: QuestionFactoryProtocol {
             correctAnswer: false)
     ]
     
-    weak var delegate: (QuestionFactoryDelegate)?
+    weak var delegate: QuestionFactoryDelegate?
     
     init(delegate: QuestionFactoryDelegate) {
         self.delegate = delegate

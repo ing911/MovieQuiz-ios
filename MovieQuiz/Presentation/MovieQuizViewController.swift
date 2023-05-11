@@ -54,7 +54,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
         textLabel.text = step.question
         counterLabel.text = step.questionNumber
     }
-
+    
     private func showAnswerResult(isCorrect: Bool) {
         if isCorrect {
             correctAnswers += 1
@@ -113,14 +113,14 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
     
     // MARK: - Действия
     @IBAction private func noButtonClicked(_ sender: UIButton) {
-            guard let currentQuestion = currentQuestion else { return }
-            let givenAnswer = false
-            showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
+        guard let currentQuestion = currentQuestion else { return }
+        let givenAnswer = false
+        showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
     }
-        
+    
     @IBAction private func yesButtonClicked(_ sender: UIButton) {
-            guard let currentQuestion = currentQuestion else { return }
-            let givenAnswer = true
-            showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
+        guard let currentQuestion = currentQuestion else { return }
+        let givenAnswer = true
+        showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
     }
 }

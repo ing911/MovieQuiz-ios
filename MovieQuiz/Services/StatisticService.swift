@@ -9,17 +9,17 @@ protocol StatisticService {
 }
 
 final class StatisticServiceImplementation: StatisticService {
-//   MARK: - Private properties
+    //   MARK: - Private properties
     private let userDefaults = UserDefaults.standard
     private let dateProvider: () -> Date = { Date() }
-//    MARK: - Properties
+    //    MARK: - Properties
     var totalAccuracy: Double{
         Double(correct) / Double(total) * 100
     }
     var gamesCount: Int {
         get {
             userDefaults.integer(forKey: Keys.gamesCount.rawValue)
-            }
+        }
         set {
             userDefaults.set(newValue, forKey: Keys.gamesCount.rawValue)
         }
@@ -27,7 +27,7 @@ final class StatisticServiceImplementation: StatisticService {
     var correct: Int {
         get {
             userDefaults.integer(forKey: Keys.correct.rawValue)
-            }
+        }
         set {
             userDefaults.set(newValue, forKey: Keys.correct.rawValue)
         }
@@ -35,7 +35,7 @@ final class StatisticServiceImplementation: StatisticService {
     var total: Int {
         get {
             userDefaults.integer(forKey: Keys.total.rawValue)
-            }
+        }
         set {
             userDefaults.set(newValue, forKey: Keys.total.rawValue)
         }
@@ -56,11 +56,11 @@ final class StatisticServiceImplementation: StatisticService {
             userDefaults.set(data, forKey: Keys.bestGame.rawValue)
         }
     }
-//   MARK: - Keys for UserDefaults
+    //   MARK: - Keys for UserDefaults
     private enum Keys: String {
         case correct, total, bestGame, gamesCount
     }
-//    MARK: - Store function
+    //    MARK: - Store function
     func store(correct count: Int, total amount: Int) {
         self.correct += count
         self.total += amount
